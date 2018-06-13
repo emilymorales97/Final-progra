@@ -1,0 +1,2 @@
+﻿  Source.cpp
+c:\users\emmil\source\repos\final\final\source.cpp(227): error C4700: se utilizó la variable local 'pos' sin inicializar
