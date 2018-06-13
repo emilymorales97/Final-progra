@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>                                                              //Emily Morales Carnet No. 0901-17-17632//
+#include <stdlib.h>                                                            //Joselyn Rivera//
 #include<iostream>
 
 struct nodoPila {
@@ -474,23 +474,23 @@ void Insertar(Lista *lista, int v) {
 	nuevo = (pNodo)malloc(sizeof(tipoNodo));
 	nuevo->valor = v;
 
-	/* Colocamos actual en la primera posición de la lista */
+	/* Colocamos actual en la primera posiciÃ³n de la lista */
 	actual = *lista;
 	if (actual) while (actual->anterior) actual = actual->anterior;
-	/* Si la lista está vacía o el primer miembro es mayor que el nuevo */
+	/* Si la lista estÃ¡ vacÃ­a o el primer miembro es mayor que el nuevo */
 	if (!actual || actual->valor > v) {
-		/* Añadimos la lista a continuación del nuevo nodo */
+		/* AÃ±adimos la lista a continuaciÃ³n del nuevo nodo */
 		nuevo->siguiente = actual;
 		nuevo->anterior = NULL;
 		if (actual) actual->anterior = nuevo;
 		if (!*lista) *lista = nuevo;
 	}
 	else {
-		/* Avanzamos hasta el último elemento o hasta que el siguiente tenga
+		/* Avanzamos hasta el Ãºltimo elemento o hasta que el siguiente tenga
 		un valor mayor que v */
 		while (actual->siguiente &&actual->siguiente->valor <= v)
 			actual = actual->siguiente;
-		/* Insertamos el nuevo nodo después del nodo anterior */
+		/* Insertamos el nuevo nodo despuÃ©s del nodo anterior */
 		nuevo->siguiente = actual->siguiente;
 		actual->siguiente = nuevo;
 		nuevo->anterior = actual;
@@ -506,7 +506,7 @@ void Borrar(Lista *lista, int v) {
 	while (nodo && nodo->valor < v) nodo = nodo->siguiente;
 	while (nodo && nodo->valor > v) nodo = nodo->anterior;
 
-	/* El valor v no está en la lista */
+	/* El valor v no estÃ¡ en la lista */
 	if (!nodo || nodo->valor != v) return;
 
 	/* Borrar el nodo */
@@ -517,7 +517,7 @@ void Borrar(Lista *lista, int v) {
 
 		if (nodo->anterior) /* no es el primer elemento */
 			nodo->anterior->siguiente = nodo->siguiente;
-		if (nodo->siguiente) /* no es el último nodo */
+		if (nodo->siguiente) /* no es el Ãºltimo nodo */
 			nodo->siguiente->anterior = nodo->anterior;
 		free(nodo);
 }
@@ -539,7 +539,7 @@ void BorrarLista(Lista *lista) {
 void MostrarLista(Lista lista, int orden) {
 	pNodo nodo = lista;
 
-	if (!lista) cout<<"Lista vacía"<<endl;
+	if (!lista) cout<<"Lista vacÃ­a"<<endl;
 
 	nodo = lista;
 	if (orden == ASCENDENTE) {
